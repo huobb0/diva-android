@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/_stash_diva-android.iml" filepath="$PROJECT_DIR$/.idea/_stash_diva-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/_stash_diva-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/_stash_diva-android.app.iml" />
     </modules>
   </component>
 </project>
