@@ -1,0 +1,41 @@
+jakhar/aseem/diva/AccessControl3NotesActivity.java
+ jakhar.aseem.diva.AccessControl3NotesActivity
+jakhar/aseem/diva/SQLInjectionActivity.java
+ jakhar.aseem.diva.SQLInjectionActivity
+jakhar/aseem/diva/HardcodeActivity.java
+ jakhar.aseem.diva.HardcodeActivity
+jakhar/aseem/diva/InputValidation3Activity.java
+ jakhar.aseem.diva.InputValidation3Activity
+jakhar/aseem/diva/DivaJni.java
+ jakhar.aseem.diva.DivaJni
+jakhar/aseem/diva/BuildConfig.java
+ jakhar.aseem.diva.BuildConfig
+jakhar/aseem/diva/APICreds2Activity.java
+ jakhar.aseem.diva.APICreds2Activity
+jakhar/aseem/diva/AccessControl1Activity.java
+ jakhar.aseem.diva.AccessControl1Activity
+jakhar/aseem/diva/InsecureDataStorage4Activity.java
+ jakhar.aseem.diva.InsecureDataStorage4Activity
+jakhar/aseem/diva/InsecureDataStorage1Activity.java
+ jakhar.aseem.diva.InsecureDataStorage1Activity
+jakhar/aseem/diva/NotesProvider.java
+ jakhar.aseem.diva.NotesProvider
+ jakhar.aseem.diva.NotesProvider$DBHelper
+jakhar/aseem/diva/InsecureDataStorage2Activity.java
+ jakhar.aseem.diva.InsecureDataStorage2Activity
+jakhar/aseem/diva/InsecureDataStorage3Activity.java
+ jakhar.aseem.diva.InsecureDataStorage3Activity
+jakhar/aseem/diva/InputValidation2URISchemeActivity.java
+ jakhar.aseem.diva.InputValidation2URISchemeActivity
+jakhar/aseem/diva/AccessControl2Activity.java
+ jakhar.aseem.diva.AccessControl2Activity
+jakhar/aseem/diva/LogActivity.java
+ jakhar.aseem.diva.LogActivity
+jakhar/aseem/diva/AccessControl3Activity.java
+ jakhar.aseem.diva.AccessControl3Activity
+jakhar/aseem/diva/Hardcode2Activity.java
+ jakhar.aseem.diva.Hardcode2Activity
+jakhar/aseem/diva/MainActivity.java
+ jakhar.aseem.diva.MainActivity
+jakhar/aseem/diva/APICredsActivity.java
+ jakhar.aseem.diva.APICredsActivity
