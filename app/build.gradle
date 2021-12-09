@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "jakhar.aseem.diva"
-        minSdkVersion 29
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0293"
     }
