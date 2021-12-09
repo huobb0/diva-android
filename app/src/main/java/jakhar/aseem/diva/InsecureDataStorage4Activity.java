@@ -31,7 +31,11 @@
  */
 package jakhar.aseem.diva;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +48,22 @@ import java.io.FileWriter;
 
 public class InsecureDataStorage4Activity extends AppCompatActivity {
 
+    private static final int PERMISSION_REQUEST_CODE = 200;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0) {
+                if (grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                    writeCredentialsToFile();
+                } else {
+                    // TODO in a real application here you should inform the user about the loss of functionality
+                    //  because the permission was not granted
+                }
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +71,23 @@ public class InsecureDataStorage4Activity extends AppCompatActivity {
     }
 
     public void saveCredentials(View view) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                // TODO in a real application you should show a rationale to the user here
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        PERMISSION_REQUEST_CODE);
+            }
+        } else {
+            writeCredentialsToFile();
+        }
+    }
+
+    private void writeCredentialsToFile() {
         EditText usr = (EditText) findViewById(R.id.ids4Usr);
         EditText pwd = (EditText) findViewById(R.id.ids4Pwd);
 
