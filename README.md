@@ -1,81 +1,53 @@
 # DIVA Android
----
-## What is DIVA?
-DIVA (Damn insecure and vulnerable App) is an App intentionally designed to be insecure. We are releasing the Android version of Diva. We thought it would be a nice way to start the year by contributing something to the security community. The aim of the App is to teach developers/QA/security professionals, flaws that are generally present in the Apps due poor or insecure coding practices. If you are reading this, you want to either learn App pentesting or secure coding and I sincerely hope that DIVA solves your purpose. So, sit back and enjoy the ride.
 
-## Why name it Diva?
-No offense to anyone, but I was bored with the name DV* and decided to name it more fancy :)
+DIVA (Damn Insecure and Vulnerable App) is a deliberately insecure Android app
+used to teach secure coding and app penetration testing. This checkout is a
+maintenance fork of the Payatu original, kept building and running on current
+Android Studio and Android releases; the exercises themselves are unchanged.
 
-## Who can use Diva?
-The idea originated, from a developer’s perspective. The Android security training for developers becomes slightly boring with lot of theory and not much hands-on. SO, I created DIVA for our Android developer training. Diva gamifies secure development learning. With that said, it is an excellent learning tool for aspiring Android penetration testers and security professionals as it gives an insight into app vulnerabilities including the source code. To sum it up:
-* Android App developers
-* Android Penetration testers
-* Security professionals
-* Students
+## Requirements
 
-## What is included in Diva?
+- Android Studio Rabbit (2026.2) or newer
+- JDK 17 or newer (Android Studio's bundled JBR works)
+- Android SDK platform 37 and build-tools 37.0.0
+- A device or emulator running Android 8.1 (API 27) or newer
 
-I tried to put as much vulnerabilities as possible in a short period of time. I am sure I have missed out on some vulnerabilities. Please ping me if you know of a good vulnerability tat can be included in Diva. It covers common vulnerabilities in Android apps ranging from insecure storage, input validation to access control issues. I have also included few vulnerabilities in native code, which makes it more interesting from the perspective of covering both Java and C vulnerabilities.
+## Build and install
 
-**Current Challenges include:**
+```sh
+./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
 
-1. Insecure Logging
-2. Hardcoding Issues – Part 1
-3. Insecure Data Storage – Part 1
-4. Insecure Data Storage – Part 2
-5. Insecure Data Storage – Part 3
-6. Insecure Data Storage – Part 4
-7. Input Validation Issues – Part 1
-8. Input Validation Issues – Part 2
-9. Access Control Issues – Part 1
-10. Access Control Issues – Part 2
-11. Access Control Issues – Part 3
-12. Hardcoding Issues – Part 2
-13. Input Validation Issues – Part 3
+Or open the project in Android Studio and run the `app` configuration.
 
-## Can I contribute?
-Yes, you can help by sending us the details of vulnerabilities that we can implement in future versions of Diva. Please send an email to info [at] payatu.com with subject “DIVA Contribution”.
+## Challenges
 
-## Where can I get Diva?
-* The Source can be downloaded from github - https://github.com/payatu/diva-android
-* You can also download the debug version of the app from http://www.payatu.com/damn-insecure-and-vulnerable-app/
+Thirteen exercises, grouped by theme:
 
-## How to compile Diva?
-* Download the source
-* Open the project in Android Studio
-* For Native library - open command line
-  * $ cd <Project-dir>/app/src/main/jni
-  * $ make (This needs to be done only once, unless you make changes to the native code - in which case run "make clean && make")  
-  * This will compile the native library and copy all the compiled versions in directory jniLibs which is required when building the app
-* From the menu bar: Build->Make Project  or  Run->Run App
+1. Insecure logging
+2. Hardcoded secrets, part 1 (Java)
+3. Insecure data storage, part 1 (shared preferences)
+4. Insecure data storage, part 2 (SQLite)
+5. Insecure data storage, part 3 (app-private file)
+6. Insecure data storage, part 4 (external storage)
+7. Input validation, part 1 (SQL injection)
+8. Input validation, part 2 (WebView URI handling)
+9. Access control, part 1 (implicit intent)
+10. Access control, part 2 (implicit intent with an extra)
+11. Access control, part 3 (PIN and content provider)
+12. Hardcoded secrets, part 2 (native code)
+13. Input validation, part 3 (native code)
 
-## How to run Diva?
-* Compile/download the app
-* On your phone settings. Go to security and check Unknown Sources checkbox. This allows you to install apps outside of play store. You don’t need to do this if you are installing the app on an emulator.
-* Connect your phone to the computer (make sure USB debugging is enabled on your phone) or run the emulator.
-* cd <app-directory>
-* adb install <apk-file>
-* Start playing.
+## Status on current Android
 
-## Feedback and Bug reports?
-We would love to hear from you about your experience with Diva. Please send us an email on info (at) payatu dot com with Subject “DIVA Feedback” or “DIVA BUG” based on what you want to share. Please include the below in your email
-1. Android version (and API version if possible)
-2. Phone make and model (or Emulator Android/API version if using an emulator)
-3. Feedback/Bug details and steps to reproduce.
+The app builds and installs on the current platform. A few exercises no longer
+reproduce unchanged on recent Android releases because the platform moved
+underneath them; the affected areas are being revisited separately rather than
+silently reshaped. Treat a failing exercise as a platform change, not as a bug
+in the app.
 
-## Author
-Aseem Jakhar
+## Attribution and licence
 
-## About Payatu
-Payatu is a boutique security testing company with specialization in:
-* IoT Security
-* Mobile Security
-* Cloud security
-* Web Security
-
-We also organize two International Security Conferences
-* nullcon International Security Conference - http://nullcon.net
-* hardwear.io Hardware Security Conference - http://hardwear.io
-
-**Website:** http://payatu.com
-**Email:** info (at) payatu dot com
+Original DIVA by Payatu (Aseem Jakhar). This fork keeps the original licence:
+GPLv3, see `LICENSE`.

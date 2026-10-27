@@ -1,0 +1,13 @@
+[versions]
+agp = "9.4.1"
+appcompat = "1.8.0"
+material = "1.14.0"
+junit = "4.13.2"
+
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Package visibility for the access-control challenges: without these
+         entries Intent.resolveActivity() returns null on API 30+ and the
+         implicit-intent challenges fail silently. -->
+    <queries>
+        <intent>
+            <action android:name="eu.defdev.diva.action.VIEW_CREDS" />
+        </intent>
+        <intent>
+            <action android:name="eu.defdev.diva.action.VIEW_CREDS2" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -64,7 +73,7 @@
             android:label="@string/apic_label"
             android:exported="true">
             <intent-filter>
-                <action android:name="jakhar.aseem.diva.action.VIEW_CREDS" />
+                <action android:name="eu.defdev.diva.action.VIEW_CREDS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -78,7 +87,7 @@
             android:label="@string/apic2_label"
             android:exported="true">
             <intent-filter>
-                <action android:name="jakhar.aseem.diva.action.VIEW_CREDS2" />
+                <action android:name="eu.defdev.diva.action.VIEW_CREDS2" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -86,7 +95,7 @@
 
         <provider
             android:name=".NotesProvider"
-            android:authorities="jakhar.aseem.diva.provider.notesprovider"
+            android:authorities="eu.defdev.diva.provider.notesprovider"
             android:enabled="true"
             android:exported="true" >
         </provider>

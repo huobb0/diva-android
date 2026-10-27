@@ -74,7 +74,7 @@
     <string name="apic2_enter">Enter PIN received from Tveeter</string>
     <string name="aci2_view">VIEW TVEETER API CREDENTIALS</string>
     <string name="apic2_label">Tveeter API Credentials</string>
-    <string name="notesprovider_url">content://jakhar.aseem.diva.provider.notesprovider/notes</string>
+    <string name="notesprovider_url">content://eu.defdev.diva.provider.notesprovider/notes</string>
 
     <string name="aci3_intro"><b>Objective</b>: This is a private notes application. You can create a PIN
                               once and access your notes after entering the correct pin. Now, try to access the private notes
